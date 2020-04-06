@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="rebpinModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="project_description">
+          <Key>
+            <PropertyRef Name="project_id" />
+          </Key>
+          <Property Name="project_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="project_name" Type="nvarchar" MaxLength="225" />
+          <Property Name="project_name_link" Type="nvarchar" MaxLength="225" />
+          <Property Name="image_link" Type="nvarchar" MaxLength="225" />
+          <Property Name="image_link_name" Type="nvarchar" MaxLength="225" />
+          <Property Name="project_location" Type="nvarchar" MaxLength="225" />
+          <Property Name="price_range" Type="nvarchar" MaxLength="225" />
+          <Property Name="Built_Up_Area" Type="nvarchar" MaxLength="225" />
+          <Property Name="EMI" Type="nvarchar" MaxLength="225" />
+          <Property Name="RERA" Type="int" />
+          <Property Name="marketed_by" Type="nvarchar" MaxLength="225" />
+          <Property Name="owner_name" Type="nvarchar" MaxLength="225" />
+          <Property Name="Owner_link" Type="nvarchar" MaxLength="225" />
+          <Property Name="Owner_type" Type="nvarchar" MaxLength="225" />
+          <Property Name="description" Type="nvarchar" MaxLength="225" />
+          <Property Name="nearBy_facility" Type="nvarchar" MaxLength="225" />
+        </EntityType>
+        <EntityContainer Name="rebpinModelStoreContainer">
+          <EntitySet Name="project_description" EntityType="Self.project_description" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rebpinModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="project_description">
+          <Key>
+            <PropertyRef Name="project_id" />
+          </Key>
+          <Property Name="project_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="project_name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="project_name_link" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="image_link" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="image_link_name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="project_location" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="price_range" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Built_Up_Area" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="EMI" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="RERA" Type="Int32" />
+          <Property Name="marketed_by" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="owner_name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Owner_link" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Owner_type" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="nearBy_facility" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="rebpinEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="project_description" EntityType="Self.project_description" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rebpinModelStoreContainer" CdmEntityContainer="rebpinEntities">
+          <EntitySetMapping Name="project_description">
+            <EntityTypeMapping TypeName="rebpinModel.project_description">
+              <MappingFragment StoreEntitySet="project_description">
+                <ScalarProperty Name="project_id" ColumnName="project_id" />
+                <ScalarProperty Name="project_name" ColumnName="project_name" />
+                <ScalarProperty Name="project_name_link" ColumnName="project_name_link" />
+                <ScalarProperty Name="image_link" ColumnName="image_link" />
+                <ScalarProperty Name="image_link_name" ColumnName="image_link_name" />
+                <ScalarProperty Name="project_location" ColumnName="project_location" />
+                <ScalarProperty Name="price_range" ColumnName="price_range" />
+                <ScalarProperty Name="Built_Up_Area" ColumnName="Built_Up_Area" />
+                <ScalarProperty Name="EMI" ColumnName="EMI" />
+                <ScalarProperty Name="RERA" ColumnName="RERA" />
+                <ScalarProperty Name="marketed_by" ColumnName="marketed_by" />
+                <ScalarProperty Name="owner_name" ColumnName="owner_name" />
+                <ScalarProperty Name="Owner_link" ColumnName="Owner_link" />
+                <ScalarProperty Name="Owner_type" ColumnName="Owner_type" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="nearBy_facility" ColumnName="nearBy_facility" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
